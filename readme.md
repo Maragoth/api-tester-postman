@@ -19,6 +19,12 @@ This project is created from scratch as part of a **QA Automation portfolio**. I
 
 ---
 
+---
+
+## ⚠️ Known API Behavior
+
+- POST /products/add accepts empty request bodies and still returns HTTP 201 with a new ID. This seems to be a backend validation issue and was discovered during testing.
+
 ## 🛠 Tools Used
 
 - [Postman](https://www.postman.com/) – for creating and running API requests and tests
