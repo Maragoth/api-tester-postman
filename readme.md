@@ -67,6 +67,7 @@ Here is the list of test cases that will be created as part of this project:
    - **POST** `/auth/login` (invalid password) – Ensure login fails with incorrect credentials.
    - **GET** `/users` (with token) – Verify token-based access (if token is implemented).
    - **GET** `/users` (without token) – Validate access control (if required).
+   - **POST** `/auth/refresh` – Test access token renewal using a valid refresh token.
 
 ### 3. **Negative Tests**
    - **GET** `/users/99999` – Non-existent user (404 Not Found).
@@ -98,6 +99,10 @@ Here is the list of test cases that will be created as part of this project:
    - **GET** `/users/{id}` with invalid ID – Expect `404`.
    - **POST** `/auth/login` with wrong credentials – Expect `400` or `401`.
    - **POST** `/products/add` with invalid body – Expect appropriate error response.
+
+### 8. **Token Refresh Tests**
+   - **POST** `/auth/refresh` – Should return a new access token and refresh token.
+   - Validate status code `200`, accessToken presence, and refreshToken presence.
 
 
 ---

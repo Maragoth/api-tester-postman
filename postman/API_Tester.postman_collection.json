@@ -1,0 +1,157 @@
+{
+	"info": {
+		"_postman_id": "5d5cd6bf-e013-4981-adac-67ede45badca",
+		"name": "API Tester Collection",
+		"description": "Full test suite for DummyJSON public REST API.",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "44729909",
+		"_collection_link": "https://adamfedorowicz.postman.co/workspace/Adam-Fedorowicz's-Workspace~97edcec6-cb56-4235-8839-922601b0ac25/collection/44729909-5d5cd6bf-e013-4981-adac-67ede45badca?action=share&source=collection_link&creator=44729909"
+	},
+	"item": [
+		{
+			"name": "POST Login user and get token",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"const jsonData = pm.response.json();\r",
+							"\r",
+							"pm.test(\"Response has a token\", function () {\r",
+							"    pm.expect(jsonData.accessToken).to.be.a('string');\r",
+							"    pm.environment.set(\"authToken\", jsonData.accessToken);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Refresh token is present\", function () {\r",
+							"    pm.expect(jsonData.refreshToken).to.be.a('string');\r",
+							"    pm.environment.set(\"refreshToken\", jsonData.refreshToken);\r",
+							"});\r",
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"username\": \"emilys\",\r\n  \"password\": \"emilyspass\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base_url}}/user/login",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"user",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "POST /auth/refresh",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"const jsonData = pm.response.json();\r",
+							"\r",
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Access token is returned\", function () {\r",
+							"    pm.expect(jsonData.accessToken).to.be.a('string');\r",
+							"    pm.environment.set(\"authToken\", jsonData.accessToken); // update access token\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Refresh token is returned\", function () {\r",
+							"    pm.expect(jsonData.refreshToken).to.be.a('string');\r",
+							"    pm.environment.set(\"refreshToken\", jsonData.refreshToken); // update refresh token\r",
+							"});\r",
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				},
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"refreshToken\": \"{{refreshToken}}\",\r\n  \"expiresInMins\": 30\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base_url}}/auth/refresh",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"auth",
+						"refresh"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					"if (pm.environment.get(\"authToken\")) {\r",
+					"    pm.request.headers.upsert({\r",
+					"        key: \"Authorization\",\r",
+					"        value: \"Bearer \" + pm.environment.get(\"authToken\")\r",
+					"    });\r",
+					"}"
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	]
+}

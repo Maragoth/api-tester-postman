@@ -1,0 +1,27 @@
+{
+	"id": "9a0fa9e6-3465-4a0f-90b6-67560b6743e1",
+	"name": "DummyJSON Environment",
+	"values": [
+		{
+			"key": "base_url",
+			"value": "https://dummyjson.com",
+			"type": "default",
+			"enabled": true
+		},
+		{
+			"key": "authToken",
+			"value": "",
+			"type": "default",
+			"enabled": true
+		},
+		{
+			"key": "refreshToken",
+			"value": "",
+			"type": "default",
+			"enabled": true
+		}
+	],
+	"_postman_variable_scope": "environment",
+	"_postman_exported_at": "2025-05-07T18:52:42.468Z",
+	"_postman_exported_using": "Postman/11.44.2"
+}

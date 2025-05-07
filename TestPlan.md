@@ -14,7 +14,7 @@ Verify the correct functioning of a REST API using automated tests in Postman. F
 
 ## 5. Scope
 - API base: https://dummyjson.com
-- Endpoints: /register, /login, /users, /products
+- Endpoints: /auth/login, /users, /products, /auth/refresh
 - Methods: GET, POST, PUT, DELETE
 - Coverage: positive, negative, data validation, schema validation
 
@@ -24,7 +24,7 @@ Verify the correct functioning of a REST API using automated tests in Postman. F
 
 ## 7. Test Types
 - Functional Testing
-- Security (authentication) Testing
+- Security (authentication) Testing (login + refresh token mechanism)
 - Negative Testing
 - Schema Validation (using JSON Schema)
 
@@ -36,8 +36,9 @@ Verify the correct functioning of a REST API using automated tests in Postman. F
 
 ## 9. Environment Variables
 - `base_url`
-- `x-api-key`
-
+- `authToken` – access token received after login
+- `refreshToken` – token used to renew accessToken
+  
 ## 10. Success Criteria
 - All test cases pass as expected
 - API responses match expected structure, status codes, and timings
