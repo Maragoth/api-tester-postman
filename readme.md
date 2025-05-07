@@ -21,16 +21,17 @@ This project is created from scratch as part of a **QA Automation portfolio**. I
 
 ## 🛠 Tools Used
 
-- [Postman](https://www.postman.com/)
-- [VS Code](https://code.visualstudio.com/)
-- [GitHub](https://github.com/)
-- [ReqRes API](https://reqres.in/)
-- [JSON Schema](https://json-schema.org/)
+- [Postman](https://www.postman.com/) – for creating and running API requests and tests
+- [VS Code](https://code.visualstudio.com/) – for editing documentation and managing files
+- [GitHub](https://github.com/) – for version control and portfolio hosting
+- [DummyJSON API](https://dummyjson.com) – as the target public REST API for testing
+- [JSON Schema](https://json-schema.org/) – for validating API response structure
 
 ---
 
 ## 📂 Project Structure
 
+```plaintext
 api-tester-postman/
 ├── README.md
 ├── TestPlan.md
@@ -43,7 +44,7 @@ api-tester-postman/
 ├── docs/screenshots/
 └── .vscode/
 └── settings.json
-
+```
 
 ---
 
@@ -54,44 +55,50 @@ Here is the list of test cases that will be created as part of this project:
 ### 1. **Basic API Tests**
    - **GET** `/users` – Retrieve a list of users.
    - **GET** `/users/{id}` – Retrieve a single user by ID.
-   - **POST** `/users` – Create a new user.
-   - **PUT** `/users/{id}` – Update a user by ID.
-   - **DELETE** `/users/{id}` – Delete a user by ID.
+   - **POST** `/auth/login` – Perform login and receive a token.
+   - **GET** `/products` – Retrieve a list of products.
+   - **GET** `/products/{id}` – Retrieve a single product by ID.
+   - **POST** `/products/add` – Create a new product.
+   - **PUT** `/products/{id}` – Update an existing product.
+   - **DELETE** `/products/{id}` – Delete a product.
 
 ### 2. **Authentication Tests**
-   - **POST** `/login` – Test valid login with credentials.
-   - **POST** `/register` – Test valid registration with user details.
-   - **GET** `/users` (with valid Bearer token) – Verify that authorized users can retrieve user data.
-   - **GET** `/users` (without token) – Ensure that users cannot access the data without a valid token (401 Unauthorized).
+   - **POST** `/auth/login` – Test valid login with credentials.
+   - **POST** `/auth/login` (invalid password) – Ensure login fails with incorrect credentials.
+   - **GET** `/users` (with token) – Verify token-based access (if token is implemented).
+   - **GET** `/users` (without token) – Validate access control (if required).
 
 ### 3. **Negative Tests**
-   - **GET** `/users/99999` – Test non-existent user retrieval (404 Not Found).
-   - **POST** `/users` (with missing required fields) – Test invalid data submission (422 Unprocessable Entity).
-   - **PUT** `/users/{id}` (with invalid data) – Test updating user with invalid data (400 Bad Request).
-   - **DELETE** `/users/99999` – Test deleting a non-existent user (404 Not Found).
+   - **GET** `/users/99999` – Non-existent user (404 Not Found).
+   - **GET** `/products/99999` – Non-existent product (404 Not Found).
+   - **POST** `/products/add` (missing required fields) – Invalid creation (400 or 422).
+   - **PUT** `/products/{id}` (invalid data) – Invalid update (400).
 
 ### 4. **Data Validation Tests**
-   - **GET** `/users/{id}` – Verify that the user data returned has correct fields and values (e.g., `id`, `name`, `email`).
-   - **POST** `/users` – Ensure the newly created user data matches the request body (e.g., check if the `name` and `job` are correctly returned).
-   - **PUT** `/users/{id}` – Ensure the updated data matches the request body after updating a user.
+   - **GET** `/users/{id}` – Validate user fields (`id`, `firstName`, `email`, etc.).
+   - **GET** `/products/{id}` – Validate product structure and fields.
+   - **POST** `/products/add` – Ensure created product matches submitted data.
+   - **PUT** `/products/{id}` – Ensure updated product reflects request body.
 
 ### 5. **Response Status and Time Tests**
-   - **GET** `/users` – Verify that the API returns a `200 OK` status.
-   - **POST** `/users` – Verify that the API returns a `201 Created` status for successful creation.
-   - **PUT** `/users/{id}` – Verify that the API returns a `200 OK` status for successful update.
-   - **DELETE** `/users/{id}` – Verify that the API returns a `204 No Content` status for successful deletion.
-   - Ensure that the API response time for each endpoint is under 1000ms.
+   - **GET** `/users` – Expect `200 OK`.
+   - **POST** `/auth/login` – Expect `200 OK`.
+   - **POST** `/products/add` – Expect `200 OK` or `201 Created`.
+   - **PUT** `/products/{id}` – Expect `200 OK`.
+   - **DELETE** `/products/{id}` – Expect `200 OK`.
+   - All endpoints should respond within 1000ms.
 
 ### 6. **JSON Schema Validation**
-   - **GET** `/users` – Validate the JSON schema of the response.
-   - **GET** `/users/{id}` – Validate the JSON schema of the single user data.
-   - **POST** `/users` – Validate the JSON schema of the newly created user data.
-   - **PUT** `/users/{id}` – Validate the JSON schema of the updated user data.
+   - **GET** `/users/{id}` – Validate response against user schema.
+   - **GET** `/products/{id}` – Validate response against product schema.
+   - **POST** `/products/add` – Validate creation response schema.
+   - **PUT** `/products/{id}` – Validate update response schema.
 
 ### 7. **Error Handling Tests**
-   - **GET** `/users/{id}` with incorrect ID – Ensure that the API handles incorrect IDs gracefully and returns a `404` status.
-   - **POST** `/users` with missing required fields – Ensure that the API returns a `422` error when required fields are missing.
-   - **PUT** `/users/{id}` with invalid data – Ensure that the API returns a `400` error for invalid data submission.
+   - **GET** `/users/{id}` with invalid ID – Expect `404`.
+   - **POST** `/auth/login` with wrong credentials – Expect `400` or `401`.
+   - **POST** `/products/add` with invalid body – Expect appropriate error response.
+
 
 ---
 
@@ -99,9 +106,9 @@ Here is the list of test cases that will be created as part of this project:
 
 1. **Install Postman**: If you don’t have Postman installed, download it from [here](https://www.postman.com/downloads/).
 2. **Import Collection**: Open Postman and go to `File > Import`, select the `API_Tester.postman_collection.json` file from the `/postman/` directory.
-3. **Import Environment**: Import the `API_Tester.environment.json` to configure environment variables like `baseUrl` and `authToken`.
-4. **Run the Tests**: Once the collection and environment are set up, you can use the **Collection Runner** in Postman to run all the tests at once.
-5. **View Results**: Check the `Tests` tab for individual test results and the overall summary.
+3. **Import Environment**: Import the `API_Tester.environment.json` to configure environment variables like `base_url`.
+4. **Run the Tests**: Once the collection and environment are set up, use the **Collection Runner** in Postman to execute all tests.
+5. **View Results**: Check the `Tests` tab for detailed results.
 
 ---
 
