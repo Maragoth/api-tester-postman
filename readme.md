@@ -19,8 +19,6 @@ This project is created from scratch as part of a **QA Automation portfolio**. I
 
 ---
 
----
-
 ## ⚠️ Known API Behavior
 
 - POST /products/add accepts empty request bodies and still returns HTTP 201 with a new ID. This seems to be a backend validation issue and was discovered during testing.
@@ -48,6 +46,7 @@ api-tester-postman/
 ├── json-schemas/
 │ └── *.json
 ├── docs/screenshots/
+├── docs/results/
 └── .vscode/
 └── settings.json
 ```
@@ -120,7 +119,9 @@ Here is the list of test cases that will be created as part of this project:
 3. **Import Environment**: Import the `API_Tester.environment.json` to configure environment variables like `base_url`.
 4. **Run the Tests**: Once the collection and environment are set up, use the **Collection Runner** in Postman to execute all tests.
 5. **View Results**: Check the `Tests` tab for detailed results.
-
+   
+📝 Test run results (e.g. exported .json or .html) can be found under:
+docs/results/ – this folder contains saved Collection Runner results for verification and documentation purposes.
 ---
 
 ## 📄 License

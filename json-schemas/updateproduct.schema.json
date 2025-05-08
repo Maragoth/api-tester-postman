@@ -1,0 +1,35 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Update Product Schema",
+  "type": "object",
+  "required": [
+    "id",
+    "title",
+    "price",
+    "discountPercentage",
+    "stock",
+    "rating",
+    "images",
+    "thumbnail",
+    "description",
+    "brand",
+    "category"
+  ],
+  "properties": {
+    "id": { "type": "integer" },
+    "title": { "type": "string" },
+    "price": { "type": "number" },
+    "discountPercentage": { "type": "number" },
+    "stock": { "type": "integer" },
+    "rating": { "type": "number" },
+    "images": {
+      "type": "array",
+      "items": { "type": "string", "format": "uri" }
+    },
+    "thumbnail": { "type": "string", "format": "uri" },
+    "description": { "type": "string" },
+    "brand": { "type": "string" },
+    "category": { "type": "string" }
+  },
+  "additionalProperties": false
+}

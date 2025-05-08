@@ -5,3 +5,9 @@
 - The response contains a generated product ID despite no data being provided.
 - This indicates a missing validation layer in the backend.
 - Status: Confirmed. Reproducible.
+
+
+## 📁 Saved Results
+
+The full test run report is saved in:
+docs/results/collection_run_2025-05-08.json

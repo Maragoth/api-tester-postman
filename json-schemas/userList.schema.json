@@ -1,0 +1,35 @@
+{
+  "type": "object",
+  "properties": {
+    "users": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "firstName",
+          "lastName",
+          "age",
+          "gender",
+          "email",
+          "username",
+          "image"
+        ],
+        "properties": {
+          "id": { "type": "integer" },
+          "firstName": { "type": "string" },
+          "lastName": { "type": "string" },
+          "age": { "type": "integer" },
+          "gender": { "type": "string" },
+          "email": { "type": "string" },
+          "username": { "type": "string" },
+          "image": { "type": "string", "format": "uri" }
+        }
+      }
+    },
+    "total": { "type": "integer" },
+    "skip": { "type": "integer" },
+    "limit": { "type": "integer" }
+  },
+  "required": ["users", "total", "skip", "limit"]
+}

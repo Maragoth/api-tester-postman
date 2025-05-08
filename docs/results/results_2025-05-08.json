@@ -1,0 +1,679 @@
+{
+	"id": "dd3d3eb6-94b1-4810-9f3a-2a7e196815fb",
+	"name": "API Tester Collection",
+	"timestamp": "2025-05-08T22:17:04.935Z",
+	"collection_id": "44729909-5d5cd6bf-e013-4981-adac-67ede45badca",
+	"folder_id": 0,
+	"environment_id": "44729909-9a0fa9e6-3465-4a0f-90b6-67560b6743e1",
+	"totalPass": 45,
+	"delay": 0,
+	"persist": true,
+	"status": "finished",
+	"startedAt": "2025-05-08T22:17:01.981Z",
+	"totalFail": 2,
+	"results": [
+		{
+			"id": "f4cc0904-1994-49d1-b763-9471678e8024",
+			"name": "POST Login user and get token",
+			"url": "https://dummyjson.com/user/login",
+			"time": 85,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status code is 200": true,
+				"Response time is less than 1000ms": true,
+				"Response has a token": true,
+				"Refresh token is present": true
+			},
+			"testPassFailCounts": {
+				"Status code is 200": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Response time is less than 1000ms": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Response has a token": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Refresh token is present": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				85
+			],
+			"allTests": [
+				{
+					"Status code is 200": true,
+					"Response time is less than 1000ms": true,
+					"Response has a token": true,
+					"Refresh token is present": true
+				}
+			]
+		},
+		{
+			"id": "945bd463-8380-4092-97f2-f253337670ee",
+			"name": "POST /auth/refresh",
+			"url": "https://dummyjson.com/auth/refresh",
+			"time": 85,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status code is 200": true,
+				"Response time is less than 1000ms": true,
+				"Access token is returned": true,
+				"Refresh token is returned": true
+			},
+			"testPassFailCounts": {
+				"Status code is 200": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Response time is less than 1000ms": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Access token is returned": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Refresh token is returned": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				85
+			],
+			"allTests": [
+				{
+					"Status code is 200": true,
+					"Response time is less than 1000ms": true,
+					"Access token is returned": true,
+					"Refresh token is returned": true
+				}
+			]
+		},
+		{
+			"id": "5ce7d4bd-304c-4b2e-828d-b289ef90165c",
+			"name": "users list",
+			"url": "https://dummyjson.com/users",
+			"time": 89,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status code is 200": true,
+				"Response time is less than 1000ms": true,
+				"Validate user list schema": true
+			},
+			"testPassFailCounts": {
+				"Status code is 200": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Response time is less than 1000ms": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Validate user list schema": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				89
+			],
+			"allTests": [
+				{
+					"Status code is 200": true,
+					"Response time is less than 1000ms": true,
+					"Validate user list schema": true
+				}
+			]
+		},
+		{
+			"id": "c152538f-e4d8-49fd-967a-86a73477a0d2",
+			"name": "user \"id\"",
+			"url": "https://dummyjson.com/users/1",
+			"time": 86,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status code is 200": true,
+				"Response time is less than 1000ms": true,
+				"Validate single user schema": true
+			},
+			"testPassFailCounts": {
+				"Status code is 200": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Response time is less than 1000ms": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Validate single user schema": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				86
+			],
+			"allTests": [
+				{
+					"Status code is 200": true,
+					"Response time is less than 1000ms": true,
+					"Validate single user schema": true
+				}
+			]
+		},
+		{
+			"id": "36371802-35cd-40df-bc4b-2c845c400129",
+			"name": "Products list",
+			"url": "https://dummyjson.com/products",
+			"time": 87,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status code is 200": true,
+				"Response time is less than 1000ms": true,
+				"Response schema is valid": true
+			},
+			"testPassFailCounts": {
+				"Status code is 200": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Response time is less than 1000ms": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Response schema is valid": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				87
+			],
+			"allTests": [
+				{
+					"Status code is 200": true,
+					"Response time is less than 1000ms": true,
+					"Response schema is valid": true
+				}
+			]
+		},
+		{
+			"id": "fbcad49f-6c6b-4b5a-889a-f08ef48a4e74",
+			"name": "Product \"ID\"",
+			"url": "https://dummyjson.com/products/1",
+			"time": 84,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status code is 200": true,
+				"Response time is less than 1000ms": true,
+				"Response schema is valid": true
+			},
+			"testPassFailCounts": {
+				"Status code is 200": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Response time is less than 1000ms": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Response schema is valid": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				84
+			],
+			"allTests": [
+				{
+					"Status code is 200": true,
+					"Response time is less than 1000ms": true,
+					"Response schema is valid": true
+				}
+			]
+		},
+		{
+			"id": "23f369ac-43ae-4a96-95bc-6e3e307be1f8",
+			"name": "Add New Product",
+			"url": "https://dummyjson.com/products/add",
+			"time": 85,
+			"responseCode": {
+				"code": 201,
+				"name": "Created"
+			},
+			"tests": {
+				"Status code is 201": true,
+				"Response time is less than 1000ms": true,
+				"Response matches the addProduct schema": true
+			},
+			"testPassFailCounts": {
+				"Status code is 201": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Response time is less than 1000ms": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Response matches the addProduct schema": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				85
+			],
+			"allTests": [
+				{
+					"Status code is 201": true,
+					"Response time is less than 1000ms": true,
+					"Response matches the addProduct schema": true
+				}
+			]
+		},
+		{
+			"id": "f326ad0f-43e2-429a-8d51-f1138bb12771",
+			"name": "Update Product",
+			"url": "https://dummyjson.com/products/1",
+			"time": 86,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status code is 200": true,
+				"Response time is less than 1000ms": true,
+				"Response matches the updateProduct schema": true
+			},
+			"testPassFailCounts": {
+				"Status code is 200": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Response time is less than 1000ms": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Response matches the updateProduct schema": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				86
+			],
+			"allTests": [
+				{
+					"Status code is 200": true,
+					"Response time is less than 1000ms": true,
+					"Response matches the updateProduct schema": true
+				}
+			]
+		},
+		{
+			"id": "3e649c05-b6b5-4a10-a084-963572e73abe",
+			"name": "Delete Product",
+			"url": "https://dummyjson.com/products/1",
+			"time": 85,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status code is 200": true,
+				"Response time is less than 1000ms": true,
+				"Validate deleted product schema": true,
+				"Product is marked as deleted": true
+			},
+			"testPassFailCounts": {
+				"Status code is 200": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Response time is less than 1000ms": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Validate deleted product schema": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Product is marked as deleted": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				85
+			],
+			"allTests": [
+				{
+					"Status code is 200": true,
+					"Response time is less than 1000ms": true,
+					"Validate deleted product schema": true,
+					"Product is marked as deleted": true
+				}
+			]
+		},
+		{
+			"id": "2ccfe029-41a9-4c04-bf80-ea38638bf3af",
+			"name": "User without Token",
+			"url": "https://dummyjson.com/users\n",
+			"time": 87,
+			"responseCode": {
+				"code": 404,
+				"name": "Not Found"
+			},
+			"tests": {
+				"Status code is not 200 (unauthorized or restricted)": true,
+				"Response time is less than 1000ms": true
+			},
+			"testPassFailCounts": {
+				"Status code is not 200 (unauthorized or restricted)": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Response time is less than 1000ms": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				87
+			],
+			"allTests": [
+				{
+					"Status code is not 200 (unauthorized or restricted)": true,
+					"Response time is less than 1000ms": true
+				}
+			]
+		},
+		{
+			"id": "156a458e-103b-4fd7-939f-00b9ab0669d0",
+			"name": "Login with wrong password",
+			"url": "https://dummyjson.com/auth/login\n",
+			"time": 85,
+			"responseCode": {
+				"code": 404,
+				"name": "Not Found"
+			},
+			"tests": {
+				"Status code is 400 or 404": true,
+				"Response time is less than 1000ms": true,
+				"Response contains error message": true
+			},
+			"testPassFailCounts": {
+				"Status code is 400 or 404": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Response time is less than 1000ms": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Response contains error message": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				85
+			],
+			"allTests": [
+				{
+					"Status code is 400 or 404": true,
+					"Response time is less than 1000ms": true,
+					"Response contains error message": true
+				}
+			]
+		},
+		{
+			"id": "c33d26d4-8041-4b44-9ccc-79ac41c57a4a",
+			"name": "Wrong User ID",
+			"url": "https://dummyjson.com/users/99999",
+			"time": 89,
+			"responseCode": {
+				"code": 404,
+				"name": "Not Found"
+			},
+			"tests": {
+				"Status code is 404": true,
+				"Response time is less than 1000ms": true,
+				"Response matches userNotFound schema": true
+			},
+			"testPassFailCounts": {
+				"Status code is 404": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Response time is less than 1000ms": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Response matches userNotFound schema": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				89
+			],
+			"allTests": [
+				{
+					"Status code is 404": true,
+					"Response time is less than 1000ms": true,
+					"Response matches userNotFound schema": true
+				}
+			]
+		},
+		{
+			"id": "bd0048f6-2b23-4c66-aae7-6f1a634f535a",
+			"name": "Add Product with Missing Fields",
+			"url": "https://dummyjson.com/products/add",
+			"time": 84,
+			"responseCode": {
+				"code": 201,
+				"name": "Created"
+			},
+			"tests": {
+				"Status code is 400 or 422": false,
+				"Response time is less than 1000ms": true,
+				"Response contains error message": false
+			},
+			"testPassFailCounts": {
+				"Status code is 400 or 422": {
+					"pass": 0,
+					"fail": 1
+				},
+				"Response time is less than 1000ms": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Response contains error message": {
+					"pass": 0,
+					"fail": 1
+				}
+			},
+			"times": [
+				84
+			],
+			"allTests": [
+				{
+					"Status code is 400 or 422": false,
+					"Response time is less than 1000ms": true,
+					"Response contains error message": false
+				}
+			]
+		},
+		{
+			"id": "7501fc19-30ba-42dd-9cc7-70f0321d9f87",
+			"name": "Update invalid product",
+			"url": "https://dummyjson.com/products/99999\n",
+			"time": 88,
+			"responseCode": {
+				"code": 404,
+				"name": "Not Found"
+			},
+			"tests": {
+				"Status code is 404": true,
+				"Response time is less than 1000ms": true,
+				"Response matches productNotFound schema": true
+			},
+			"testPassFailCounts": {
+				"Status code is 404": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Response time is less than 1000ms": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Response matches productNotFound schema": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				88
+			],
+			"allTests": [
+				{
+					"Status code is 404": true,
+					"Response time is less than 1000ms": true,
+					"Response matches productNotFound schema": true
+				}
+			]
+		},
+		{
+			"id": "0b7bb7da-8a3c-494a-a83a-f57f3250e9a0",
+			"name": "Delete invalid product",
+			"url": "https://dummyjson.com/products/99999",
+			"time": 85,
+			"responseCode": {
+				"code": 404,
+				"name": "Not Found"
+			},
+			"tests": {
+				"Status code is 404": true,
+				"Response time is less than 1000ms": true,
+				"Response matches productNotFound schema": true
+			},
+			"testPassFailCounts": {
+				"Status code is 404": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Response time is less than 1000ms": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Response matches productNotFound schema": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				85
+			],
+			"allTests": [
+				{
+					"Status code is 404": true,
+					"Response time is less than 1000ms": true,
+					"Response matches productNotFound schema": true
+				}
+			]
+		}
+	],
+	"count": 1,
+	"totalTime": 1290,
+	"collection": {
+		"requests": [
+			{
+				"id": "f4cc0904-1994-49d1-b763-9471678e8024",
+				"method": "POST"
+			},
+			{
+				"id": "945bd463-8380-4092-97f2-f253337670ee",
+				"method": "POST"
+			},
+			{
+				"id": "5ce7d4bd-304c-4b2e-828d-b289ef90165c",
+				"method": "GET"
+			},
+			{
+				"id": "c152538f-e4d8-49fd-967a-86a73477a0d2",
+				"method": "GET"
+			},
+			{
+				"id": "36371802-35cd-40df-bc4b-2c845c400129",
+				"method": "GET"
+			},
+			{
+				"id": "fbcad49f-6c6b-4b5a-889a-f08ef48a4e74",
+				"method": "GET"
+			},
+			{
+				"id": "23f369ac-43ae-4a96-95bc-6e3e307be1f8",
+				"method": "POST"
+			},
+			{
+				"id": "f326ad0f-43e2-429a-8d51-f1138bb12771",
+				"method": "PUT"
+			},
+			{
+				"id": "3e649c05-b6b5-4a10-a084-963572e73abe",
+				"method": "DELETE"
+			},
+			{
+				"id": "2ccfe029-41a9-4c04-bf80-ea38638bf3af",
+				"method": "GET"
+			},
+			{
+				"id": "156a458e-103b-4fd7-939f-00b9ab0669d0",
+				"method": "POST"
+			},
+			{
+				"id": "c33d26d4-8041-4b44-9ccc-79ac41c57a4a",
+				"method": "GET"
+			},
+			{
+				"id": "bd0048f6-2b23-4c66-aae7-6f1a634f535a",
+				"method": "POST"
+			},
+			{
+				"id": "7501fc19-30ba-42dd-9cc7-70f0321d9f87",
+				"method": "PUT"
+			},
+			{
+				"id": "0b7bb7da-8a3c-494a-a83a-f57f3250e9a0",
+				"method": "DELETE"
+			}
+		]
+	}
+}
