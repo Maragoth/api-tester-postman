@@ -1,0 +1,35 @@
+name: 🧪 Run API Tests (Postman + Newman)
+
+on:
+  push:
+    branches: [main]
+
+jobs:
+  api-tests:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: ⬇️ Checkout repository
+        uses: actions/checkout@v3
+
+      - name: 🔧 Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: "18"
+
+      - name: 📦 Install Newman and Reporter
+        run: |
+          npm install -g newman newman-reporter-htmlextra
+
+      - name: 🧪 Run API tests with Newman
+        run: |
+          newman run postman/API_Tester.postman_collection.json \
+            -e postman/API_Tester.environment.json \
+            -r htmlextra \
+            --reporter-htmlextra-export docs/results/report.html
+
+      - name: 📤 Upload HTML report as artifact
+        uses: actions/upload-artifact@v3
+        with:
+          name: api-test-report
+          path: docs/results/report.html
