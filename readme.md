@@ -1,7 +1,9 @@
 # 🛠️ API Tester – Postman Project
 
 ![Run API Tests (Postman + Newman)](https://github.com/Maragoth/api-tester-postman/actions/workflows/run-api-tests.yml/badge.svg)  
-![Tests](https://img.shields.io/badge/Tests-37_passed_2_failed-critical?style=flat-square&logo=postman)
+![Passed](https://img.shields.io/badge/✅%2037%20Passed-success?style=flat-square&logo=postman&logoColor=white)
+![Failed](https://img.shields.io/badge/❌%202%20Failed-critical?style=flat-square&logo=postman&logoColor=white)
+
 
 ![Last Commit](https://img.shields.io/github/last-commit/Maragoth/api-tester-postman?style=flat)  
 ![Platform](https://img.shields.io/badge/platform-Windows%20%7C%20Cross--Platform-lightgrey)![License](https://img.shields.io/badge/license-MIT-blue.svg)  
