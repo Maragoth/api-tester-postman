@@ -1,5 +1,11 @@
 # 🧪 API Tester – Postman Project
 
+![Run API Tests (Postman + Newman)](https://github.com/Maragoth/api-tester-postman/actions/workflows/run-api-tests.yml/badge.svg)  
+![Tests](https://img.shields.io/badge/tests-47-green)  
+![Last Commit](https://img.shields.io/github/last-commit/Maragoth/api-tester-postman?style=flat)  
+![Platform](https://img.shields.io/badge/platform-Windows%20%7C%20Cross--Platform-lightgrey)![License](https://img.shields.io/badge/license-MIT-blue.svg)  
+
+
 ## 🔧 Project Overview
 
 This project is created from scratch as part of a **QA Automation portfolio**. It focuses on **API testing** using Postman to simulate real-world API testing scenarios for a typical backend system. The goal is to ensure that the API behaves as expected under different conditions, including both positive and negative test cases.
