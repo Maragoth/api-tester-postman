@@ -1,4 +1,4 @@
-# 🧪 API Tester – Postman Project
+# 🛠️ API Tester – Postman Project
 
 ![Run API Tests (Postman + Newman)](https://github.com/Maragoth/api-tester-postman/actions/workflows/run-api-tests.yml/badge.svg)  
 ![Tests](https://img.shields.io/badge/tests-47-green)  
@@ -81,7 +81,7 @@ api-tester-postman/
 
 ---
 
-## 🧪 Test Cases Included
+## 🔍 Test Cases Included
 
 Here is the list of test cases that will be created as part of this project:
 
