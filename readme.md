@@ -159,6 +159,18 @@ View Results: Check the Tests tab for detailed results.
 
 ---
 
+## 👤 About Me as QA:
+
+My name is Adam Fedorowicz, a QA Automation Engineer passionate about building real-world testing frameworks using scalable architecture.
+I specialize in Selenium, Pytest, API testing (Postman), and CI workflows.
+This project is part of my growing QA portfolio, aiming to showcase reliable, clean, and professional test automation.
+
+## 📫 Find Me Online
+
+- 🌐 [LinkedIn – Adam Fedorowicz](https://www.linkedin.com/in/adam-fedorowicz-UK)
+- 💻 [GitHub – Maragoth](https://github.com/Maragoth)
+- 💼 [Upwork – QA Automation Engineer](https://www.upwork.com/freelancers/~018d6c0e188850f30d?mp_source=share)
+
 ## 🛡️ License
 
 This project is open source and available under the [MIT License](LICENSE).
