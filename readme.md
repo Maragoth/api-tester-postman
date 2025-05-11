@@ -10,6 +10,8 @@
 
 This project is created from scratch as part of a **QA Automation portfolio**. It focuses on **API testing** using Postman to simulate real-world API testing scenarios for a typical backend system. The goal is to ensure that the API behaves as expected under different conditions, including both positive and negative test cases.
 
+✅ All tests are designed to be 100% effective — they not only pass when the API works correctly but also reliably detect bugs and unexpected behavior.
+
 ---
 
 ## 🔑 Features
@@ -25,9 +27,15 @@ This project is created from scratch as part of a **QA Automation portfolio**. I
 
 ---
 
-## ⚠️ Known API Behavior
+## ⛔️ Known API Behavior
 
-- POST /products/add accepts empty request bodies and still returns HTTP 201 with a new ID. This seems to be a backend validation issue and was discovered during testing.
+⛔️ BUG DETECTED: POST /products/add accepts empty request bodies and still returns HTTP 201 with a new ID.
+
+This issue was discovered and reported during execution of the negative test case: "Add Product with Missing Fields".
+
+The response did not return the expected validation error, which indicates a backend issue.
+
+✅This confirms the effectiveness of the test suite in identifying real-world issues.
 
 ## 🛠 Tools Used
 
@@ -43,18 +51,32 @@ This project is created from scratch as part of a **QA Automation portfolio**. I
 
 ```plaintext
 api-tester-postman/
+├── .github/
+│   └── workflows/
+│       └── run-api-tests.yml
+├── .vscode/
+│   └── settings.json
+├── docs/
+│   ├── results/
+│   └── screenshots/
+│       └── API_TESTER_POSTMAN_RESULTS.png
+├── json-schemas/
+│   ├── addProduct.schema.json
+│   ├── deletedProduct.schema.json
+│   ├── product.schema.json
+│   ├── productList.schema.json
+│   ├── productNotFound.schema.json
+│   ├── updateproduct.schema.json
+│   ├── user.schema.json
+│   ├── userList.schema.json
+│   └── userNotFound.schema.json
+├── postman/
+│   ├── API_Tester.environment.json
+│   └── API_Tester.postman_collection.json
+├── LICENSE
 ├── README.md
 ├── TestPlan.md
-├── TestSummary.md
-├── postman/
-│ ├── API_Tester.postman_collection.json
-│ └── API_Tester.environment.json
-├── json-schemas/
-│ └── *.json
-├── docs/screenshots/
-├── docs/results/
-└── .vscode/
-└── settings.json
+└── TestSummary.md
 ```
 
 ---
@@ -115,22 +137,29 @@ Here is the list of test cases that will be created as part of this project:
    - **POST** `/auth/refresh` – Should return a new access token and refresh token.
    - Validate status code `200`, accessToken presence, and refreshToken presence.
 
+All included tests are validated and proven to detect both successful and faulty API behaviors. Failures in test reports are not false positives — they are real issues present in the tested API.
 
 ---
 
 ## 📝 How to Run the Tests
 
-1. **Install Postman**: If you don’t have Postman installed, download it from [here](https://www.postman.com/downloads/).
-2. **Import Collection**: Open Postman and go to `File > Import`, select the `API_Tester.postman_collection.json` file from the `/postman/` directory.
-3. **Import Environment**: Import the `API_Tester.environment.json` to configure environment variables like `base_url`.
-4. **Run the Tests**: Once the collection and environment are set up, use the **Collection Runner** in Postman to execute all tests.
-5. **View Results**: Check the `Tests` tab for detailed results.
-   
-📝 Test run results (e.g. exported .json or .html) can be found under:
-docs/results/ – this folder contains saved Collection Runner results for verification and documentation purposes.
+Install Postman: If you don’t have Postman installed, download it from here.
+
+Import Collection: Open Postman and go to File > Import, select the API_Tester.postman_collection.json file from the /postman/ directory.
+
+Import Environment: Import the API_Tester.environment.json to configure environment variables like base_url.
+
+Run the Tests: Once the collection and environment are set up, use the Collection Runner in Postman to execute all tests.
+
+View Results: Check the Tests tab for detailed results.
+
+📁 Additionally, a detailed HTML report is automatically generated via CI and can be downloaded from the GitHub Actions Artifacts tab after every push.
+
+📜 Test run results (e.g. exported .json or .html) are also saved under:docs/results/ – this folder contains saved test results for reference and documentation purposes.
+
 ---
 
-## 📄 License
+## 🛡️ License
 
 This project is open source and available under the [MIT License](LICENSE).
 © Adam Fedorowicz
